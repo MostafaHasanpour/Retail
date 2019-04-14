@@ -21,16 +21,19 @@ namespace Retail.Api.Controllers
             this._customerRepository = customerRepository;
         }
 
-        public Customer Get(int customerId)
+        [HttpPost("Get")]
+        public Customer GetCustomer([FromBody]CustomerRequest customer)
         {
-            return _customerRepository.GetCustomerById(customerId);
+            return _customerRepository.GetCustomerById(customer.CustomerId);
         }
 
-        public List<Customer> GetAll(int retailerId)
+        [HttpPost("GetAll")]
+        public List<Customer> GetAllCustomer([FromBody]CustomerListRequest customer)
         {
-            return _customerRepository.GetCustomersByRetailer(retailerId);
+            return _customerRepository.GetCustomersByRetailer(customer.RetailerId);
         }
 
+        [HttpPost("Add")]
         public ReturnBackMessage Add([FromBody]Customer customer)
         {
             var message = "";
@@ -43,6 +46,7 @@ namespace Retail.Api.Controllers
             return new ReturnBackMessage(message);
         }
 
+        [HttpPost("Update")]
         public ReturnBackMessage Update([FromBody]Customer customer)
         {
             var message = "";
@@ -55,6 +59,7 @@ namespace Retail.Api.Controllers
             return new ReturnBackMessage(message);
         }
 
+        [HttpPost("Remove")]
         public ReturnBackMessage Remove([FromBody]int customerId)
         {
             var message = "";
