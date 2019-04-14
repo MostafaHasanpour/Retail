@@ -60,10 +60,10 @@ namespace Retail.Api.Controllers
         }
 
         [HttpPost("Remove")]
-        public ReturnBackMessage Remove([FromBody]int customerId)
+        public ReturnBackMessage Remove([FromBody]CustomerRequest customerrequest)
         {
             var message = "";
-            var customer = _customerRepository.GetCustomerById(customerId);
+            var customer = _customerRepository.GetCustomerById(customerrequest.CustomerId);
             if (_customerRepository.RemoveCustomer(customer))
             {
                 message = "Successfully";
