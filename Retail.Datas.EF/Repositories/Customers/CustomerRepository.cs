@@ -1,4 +1,5 @@
 ﻿using Retail.Contracts.Customers;
+using Retail.Datas.EF.Commons;
 using Retail.Entities;
 using System;
 using System.Collections.Generic;
@@ -6,8 +7,12 @@ using System.Text;
 
 namespace Retail.Datas.EF.Repositories.Customers
 {
-    public class CustomerRepository : ICustomerRepository
+    public class CustomerRepository : BaseEfRepository, ICustomerRepository
     {
+        public CustomerRepository(ApplicationDbContext context) : base(context)
+        {
+        }
+
         public bool AddCustomer(Customer customer)
         {
             throw new NotImplementedException();

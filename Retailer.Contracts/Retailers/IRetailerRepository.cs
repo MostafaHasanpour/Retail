@@ -5,7 +5,7 @@ namespace Retail.Contracts.Retailers
 {
     public interface IRetailerRepository
     {
-        void AddRetailer(Retailer retailer);
+        bool AddRetailer(Retailer retailer);
         Retailer GetRetailer(int id);
 
     }
