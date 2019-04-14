@@ -41,7 +41,7 @@ namespace Retail.Datas.EF.Repositories.Customers
             }
         }
 
-        public ICollection<Customer> GetCustomersByRetailer(int retailerId)
+        public List<Customer> GetCustomersByRetailer(int retailerId)
         {
             try
             {

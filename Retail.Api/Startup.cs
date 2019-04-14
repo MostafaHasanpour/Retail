@@ -11,7 +11,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Retail.Contracts.Customers;
+using Retail.Contracts.Retailers;
 using Retail.Datas.EF.Commons;
+using Retail.Datas.EF.Repositories.Customers;
+using Retail.Datas.EF.Repositories.Retailers;
 
 namespace Retail.Api
 {
@@ -28,6 +32,10 @@ namespace Retail.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("RetailDb")));
+
+            services.AddTransient<IRetailerRepository, RetailerRepository>();
+
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
