@@ -4,7 +4,7 @@ using Retail.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace Retail.Datas.EF
+namespace Retail.Datas.EF.Commons
 {
     public class ApplicationDbContext : DbContext
     {

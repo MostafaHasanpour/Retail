@@ -13,12 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\Customers\" />
-    <Folder Include="Repositories\Retailers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Retail.Entities\Retail.Entities.csproj" />
+    <ProjectReference Include="..\Retailer.Contracts\Retail.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
