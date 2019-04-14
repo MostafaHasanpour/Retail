@@ -8,8 +8,8 @@ namespace Retail.Datas.EF.Commons
 {
     public class ApplicationDbContext : DbContext
     {
-        public ISet<Retailer> Retailers { get; set; }
-        public ISet<Customer> Customers { get; set; }
+        public DbSet<Retailer> Retailers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public ApplicationDbContext( DbContextOptions options) : base(options)
         {

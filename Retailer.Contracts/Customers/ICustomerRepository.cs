@@ -12,6 +12,6 @@ namespace Retail.Contracts.Customers
         bool RemoveCustomer(Customer customer);
 
         ICollection<Customer> GetCustomersByRetailer(int retailerId);
-        ICollection<Customer> GetCustomersById(int customerId);
+        Customer GetCustomerById(int customerId);
     }
 }
